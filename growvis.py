@@ -28,9 +28,7 @@ def main():
 
   for i in xrange(args.iterations):
     x = np.random.uniform(0, 1, 2)
-    tree.grow(x, args.step)
-
-  for x0, x1 in tree.lines():
+    x0, x1 = tree.grow(x, args.step)
     plt.plot([x0[0], x1[0]], [x0[1], x1[1]], 'k-')
 
   plt.savefig(args.output, dpi=96)
